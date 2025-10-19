@@ -1,15 +1,14 @@
 {
-  "dependencies": {
-    "fs-extra": "^11.3.2"
-  },
   "name": "lesson-3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node task3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.3.2"
+  }
 }
