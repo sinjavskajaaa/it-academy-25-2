@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "node task3.js"
+    "test": "node task3"
   },
   "author": "",
   "license": "ISC",
