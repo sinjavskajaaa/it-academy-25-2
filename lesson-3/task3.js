@@ -1,6 +1,5 @@
 const fs = require('fs-extra');
 
-try {
     //Создать папку
     fs.mkdirpSync('./Folder-1');
 
@@ -26,8 +25,3 @@ try {
     fs.removeSync('./Folder-1');
     fs.removeSync('./Folder-2');
     fs.removeSync('./Folder-3');
-
-
-} catch (err) {
-    console.error(err);
-}
