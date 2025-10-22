@@ -1,5 +1,5 @@
 // 1) Выполнить сложение различных типов(string+boolean, string+number, number+boolean)
-const str = 'Hello';
+const str = 'Hi';
 const num = 3;
 const boolean = false;
 
