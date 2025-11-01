@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57928d0e-240a-47c1-a10c-5dacda9221cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lesson-4/task4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson-8/firstpromise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson-8/squaredNumber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson-8/sumOfNumbers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="newFeature" />
+        <entry key="$PROJECT_DIR$" value="newHomework" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +50,10 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.firstpromise.js.executor": "Run",
+    "Node.js.promises.js.executor": "Run",
+    "Node.js.squaredNumber.js.executor": "Run",
+    "Node.js.sumOfNumbers.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "homework",
@@ -75,6 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760543413661</updated>
       <workItem from="1760543414787" duration="1404000" />
+      <workItem from="1762011868667" duration="817000" />
     </task>
     <servers />
   </component>
