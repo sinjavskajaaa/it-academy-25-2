@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57928d0e-240a-47c1-a10c-5dacda9221cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mochajs/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/.nyc_output/42fa8206-2341-48ad-a112-9d015ec33669.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/.nyc_output/processinfo/42fa8206-2341-48ad-a112-9d015ec33669.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/.nyc_output/processinfo/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/mochajs/Calculator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochajs/test/test-spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/mochajs/test/test-spec.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,47 +67,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Calculator" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/mochajs/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/mochajs</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/mochajs/test/test-spec.js</test-file>
-      <test-names>
-        <name value="Calculator" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Calculator.Проверка метода add" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/mochajs/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/mochajs</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/mochajs/test/test-spec.js</test-file>
-      <test-names>
-        <name value="Calculator" />
-        <name value="Проверка метода add" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Mocha.Calculator.Проверка метода add" />
-        <item itemvalue="Mocha.Calculator" />
-        <item itemvalue="Mocha.Calculator.Проверка метода add" />
-        <item itemvalue="Mocha.Calculator" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
