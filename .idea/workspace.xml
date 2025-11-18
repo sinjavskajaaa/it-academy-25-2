@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57928d0e-240a-47c1-a10c-5dacda9221cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lesson-8/firstpromise.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson-8/squaredNumber.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson-8/sumOfNumbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mochajs/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
     "Node.js.sumOfNumbers.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#7 on homework",
+    "git-widget-placeholder": "homework",
     "last_opened_file_path": "C:/Users/SinyavskayaAA/WebstormProjects/it-academy-25-2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
