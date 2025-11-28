@@ -3,8 +3,8 @@
 // из одного символа следует считать палиндромами (например, 'a')
 
 function isPalindrome(String) {
-    const newString = "";
-    const checkPalindrome = newString.toLowerCase().split('').reverse().join('');
+    const newString = String.replace(/[\s\p{P}]+/gu, '').toLowerCase();
+    const checkPalindrome = newString.split('').reverse().join('');
     console.log(checkPalindrome === newString);
 }
 
