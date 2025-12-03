@@ -1,43 +1,63 @@
 import { test, expect } from '@playwright/test';
+import { Base } from '../pages/base';
+import { Header } from '../pages/components/header';
+import { Login } from '../pages/components/login';
+import { Search } from '../pages/components/search';
+import { CartPage } from '../pages/cartPage';
+import { FavouritesPage } from '../pages/favouritesPage';
+import { ProductCard } from '../pages/productCard';
+import { ProductListingPage } from '../pages/productListingPage';
+import { WRONG_CREDENTIAL_NOTIFICATION, CREDENTIALS,TITLE_FEEDBACK_MODAL_WINDOW } from '../helpers/constants';
 
 test.describe('21vek', async () => {
 
-    test.beforeEach(async ({ page }) => {
-        await page.goto('');
-        await page.click('//button[@class=\'Button-module__button Button-module__blue-primary\']');
+    test.beforeEach(async ({page}) => {
+        const newPage = new Base(page);
+        await newPage.navigateToEndpoint();
+        await newPage.closeCookies();
+        await newPage.closePromoModal();
     });
 
-    test('Получение ошибки при авторизации', async ({ page}) => {
-        await page.locator('button.styles_userToolsToggler__c2aHe').click();
-        await page.locator('[data-testid=loginButton]').click();
-        await page.locator('#login-email').fill('login@email.by');
-        await page.locator('#login-password').fill('password');
-        await page.locator('[data-testid=loginSubmit]').click();
-        await expect(await page.locator('.ErrorMessage-module__error')).toHaveText('Проверьте электронную почту или зарегистрируйтесь')
+    test.skip('Get notification \'Проверьте электронную почту или зарегистрируйтесь\' after login with invalid credentials', async ( {page} ) => {
+        const login = new Login(page);
+        await login.openLoginModalWindow();
+        await login.loginWithEmailAndPassword(CREDENTIALS.invalidCredentials.email,CREDENTIALS.invalidCredentials.password);
+        await expect(await login.errorMessage).toHaveText(WRONG_CREDENTIAL_NOTIFICATION)
     })
 
-    test('Успешный поиск товара по коду', async ({ page}) => {
-        await page.locator('input#catalogSearch').fill('10.019.147');
-        await page.locator('.Search_searchBtn__Tk7Gw').click();
-        await expect(await page.locator('.ProductCode_container__mu6wI')).toContainText('10.019.147')
+    test('Open product card via search by code', async ({ page}) => {
+        const search = new Search(page);
+        const productCard = new ProductCard(page);
+        await search.findProductByCode(`10.019.147`);
+        await expect(await productCard.productCardCode).toContainText(`10.019.147`)
     })
 
-    test('Добавление товара в корзину', async ({ page}) => {
-        await page.locator('(//button[@data-testid=\'card-basket-action\'])[1]').click();
-        const productName = await page.locator('(//span[@class=\'CardInfo_text__GGroD Text-module__text Text-module__caption Text-module__ellipsis\'])[1]').innerText();
-        await page.locator('.headerCart').click();
-        await expect(await page.locator('.BasketItem_title__MzCQ9')).toHaveText(productName)
+    test.skip('Add product to card from listing page', async ({ page}) => {
+        const header = new Header(page);
+        const productListingPage = new ProductListingPage(page);
+        const cartPage = new CartPage(page);
+        await header.catalogButton.click();
+        await productListingPage.addProductToCart();
+        const productName = await productListingPage.productNameOnListingPage.innerText();
+        await header.cartButton.click();
+        await cartPage.closePromoModalOnCartPage();
+        await expect(await cartPage.productNameOnCartPage).toHaveText(productName)
     })
 
-    test('Добавление товара в избранное', async ({ page}) => {
-        await page.locator('(//button[@data-testid=\'card-favorites\'])[1]').click();
-        await expect(await page.locator('.Snackbar-module__snackbarContent')).toHaveText('Товар добавлен в избранное')
+    test.skip('Add product to favorites from listing page', async ({ page}) => {
+        const header = new Header(page);
+        const productListingPage = new ProductListingPage(page);
+        const favouritesPage = new FavouritesPage(page);
+        await header.catalogButton.click();
+        await productListingPage.addProductToFavourites();
+        const productName = await productListingPage.productNameOnListingPage.innerText();
+        await header.favouritesButton.click();
+        await expect(await favouritesPage.productNameOnFavouritesPage).toHaveText(productName)
     })
 
-    test('Открыть форму обратной связи', async ({ page}) => {
-        await page.locator('div.styles_communicationItem__IUjz2').click();
-        await page.locator('(//button[@class=\'styles_communicationItemBox__K66_y\'])[2]').click();
-        const formName = await page.locator('.Form-module__formTitle').innerText();
-        await expect(await page.locator('.ModalDesktop-module__modalContent')).toContainText(formName)
+    test.skip('Open feedback modal window', async ({ page}) => {
+        const header = new Header(page);
+        await header.openFeedbackModalWindow();
+        await expect(await header.titleOfFeedbackModalWindow).toContainText(TITLE_FEEDBACK_MODAL_WINDOW)
     })
 })

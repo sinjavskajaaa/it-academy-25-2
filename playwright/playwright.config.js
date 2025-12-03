@@ -12,6 +12,8 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+export const baseURL = 'https://www.21vek.by/';
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -21,13 +23,13 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'https://www.21vek.by/',
+    baseURL: baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
@@ -36,7 +38,7 @@ export default defineConfig({
     storageState: undefined,
     contextOptions: {
         storageState: undefined
-    }
+    },
   },
 
   /* Configure projects for major browsers */
@@ -44,6 +46,8 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+        args: ['--start-maximized'],
+        viewport: { width: 1920, height: 1080 },
     },
 
     // {
