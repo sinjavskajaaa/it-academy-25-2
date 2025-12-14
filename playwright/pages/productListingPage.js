@@ -34,38 +34,6 @@ class ProductListingPage extends Base {
         return this.page.locator(`(//span[@class="CardInfo_text__GGroD ListingProduct_infoText__VpOUR Text-module__text Text-module__caption Text-module__ellipsis"])[1]`);
     }
 
-    // async openRandomListingPage() {
-    //     const firstLevelCategories = (await this.catalogFirstLevelPages.elementHandles()).slice(1);
-    //     if (firstLevelCategories.length === 0) {
-    //         console.warn('Нет доступных категорий первого уровня');
-    //         return;
-    //     }
-    //     const randomIndexOfFirstLevelCategory = Math.floor(Math.random() * firstLevelCategories.length);
-    //     const randomFirstLevelCategory = firstLevelCategories[randomIndexOfFirstLevelCategory];
-    //     await randomFirstLevelCategory.waitFor({ state: 'visible' });
-    //     await randomFirstLevelCategory.click();
-    //
-    //     const secondLevelCategories = await this.catalogSecondLevelPages.elementHandles();
-    //     if (secondLevelCategories.length > 0) {
-    //         if (secondLevelCategories.length > 0) {
-    //             const randomIndexOfSecondLevelCategory = Math.floor(Math.random() * secondLevelCategories.length);
-    //             const randomSecondLevelCategory = secondLevelCategories[randomIndexOfSecondLevelCategory];
-    //             await randomSecondLevelCategory.waitFor({ state: 'visible' });
-    //             await randomSecondLevelCategory.click();
-    //         }
-    //     }
-    //
-    //     const productListingPages = (await this.productListingPages.elementHandles()).slice(1);
-    //     if (productListingPages.length === 0) {
-    //         console.warn('Нет доступных страниц товаров');
-    //         return;
-    //     }
-    //     const randomIndexOfProductListingPage = Math.floor(Math.random() * productListingPages.length);
-    //     const randomProductListingPage = productListingPages[randomIndexOfProductListingPage];
-    //     await randomProductListingPage.waitFor({ state: 'visible' });
-    //     await randomProductListingPage.click();
-    // }
-
     async openFirstLevelCategoryPage() {
         await this.catalogFirstLevelPage.click();
     }
