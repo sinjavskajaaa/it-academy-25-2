@@ -18,7 +18,7 @@ test.describe('21vek', async () => {
         await newPage.closePromoModal();
     });
 
-    test.skip('Get notification \'Проверьте электронную почту или зарегистрируйтесь\' after login with invalid credentials', async ( {page} ) => {
+    test('Get notification \'Проверьте электронную почту или зарегистрируйтесь\' after login with invalid credentials', async ( {page} ) => {
         const login = new Login(page);
         await login.openLoginModalWindow();
         await login.loginWithEmailAndPassword(CREDENTIALS.invalidCredentials.email,CREDENTIALS.invalidCredentials.password);
@@ -32,7 +32,7 @@ test.describe('21vek', async () => {
         await expect(await productCard.productCardCode).toContainText(`10.019.147`)
     })
 
-    test.skip('Add product to card from listing page', async ({ page}) => {
+    test('Add product to card from listing page', async ({ page}) => {
         const header = new Header(page);
         const productListingPage = new ProductListingPage(page);
         const cartPage = new CartPage(page);
@@ -44,7 +44,7 @@ test.describe('21vek', async () => {
         await expect(await cartPage.productNameOnCartPage).toHaveText(productName)
     })
 
-    test.skip('Add product to favorites from listing page', async ({ page}) => {
+    test('Add product to favorites from listing page', async ({ page}) => {
         const header = new Header(page);
         const productListingPage = new ProductListingPage(page);
         const favouritesPage = new FavouritesPage(page);
@@ -55,7 +55,7 @@ test.describe('21vek', async () => {
         await expect(await favouritesPage.productNameOnFavouritesPage).toHaveText(productName)
     })
 
-    test.skip('Open feedback modal window', async ({ page}) => {
+    test('Open feedback modal window', async ({ page}) => {
         const header = new Header(page);
         await header.openFeedbackModalWindow();
         await expect(await header.titleOfFeedbackModalWindow).toContainText(TITLE_FEEDBACK_MODAL_WINDOW)
